@@ -1,1 +1,22 @@
-<h1>Template de prueba</h1>
+<h1>Gestor de tareas</h1>
+
+<form action="{% url 'web:nueva_tarea' %}">
+
+
+    <input type="text" id="nombre" name="nombre"/>
+    
+    <input type="submit" value="Crear"/>
+    
+</form>
+    
+{% if tareas %}
+    
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+            {{ tarea.nombre }}
+            </li>
+        {% endfor %}
+    </ul>
+    
+{% endif %}
